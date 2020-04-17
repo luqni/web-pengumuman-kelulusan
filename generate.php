@@ -51,6 +51,7 @@ while ($row = mysqli_fetch_array($hasil)){
     $pdf->Cell(20,45,'TTL',0,0);
     $pdf->Cell(28,45,':',0,0,'R');
     $pdf->Cell(15,45,$row['tempat_lahir'],0,0);
+    $pdf->Cell(2,45,',',0,0,'R');
     $pdf->Cell(27,45,$row['tanggal_lahir'],0,1,'L');
     $pdf->Cell(20,-35,'No. Peserta',0,0);
     $pdf->Cell(28,-35,':',0,0,'R');
@@ -81,19 +82,25 @@ $pdf->SetFont('times','',10);
 $pdf->Cell(150,-55,'Demikian Surat Keterangan ini dibuat untuk dapat digunakan sebagaimana mestinya.',0,1);
 
 $pdf->SetFont('times','',10);
-$pdf->Cell(150,100,'Comal, 13 Mei 2020',0,1,'R');
-$pdf->Cell(150,-90,'Kepala Sekolah',0,1,'R');
-$pdf->Image('images/tanda_tangan.jpeg',130,180,25,25);
-$pdf->Cell(150,140,'Drs. Murhono, M.Pd',0,1,'R');
+$pdf->Cell(130,100,'',0,0);
+$pdf->Cell(30,100,'Comal, 04 Mei 2020',0,1);
+$pdf->Cell(130,-90,'',0,0);
+$pdf->Cell(28,-90,'Kepala Sekolah,',0,1);
+$pdf->Image('images/tanda_tangan.jpeg',140,180,25,25);
+$pdf->Cell(130,130,'',0,0);
+$pdf->Cell(28,130,'Drs. Murhono, M.Pd',0,1);
+$pdf->Cell(130,-120,'',0,0);
+$pdf->Cell(28,-120,'19650302 199512 1 004',0,1);
+
+$pdf->AddPage();
 
 // form nilai
 $pdf->SetFont('times','',10);
 // mencetak string 
-$pdf->Cell(190,5,'KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN REPUBLIK INDONESIA',0,1,'C');
-
+$pdf->Cell(190,10,'KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN REPUBLIK INDONESIA',0,1,'C');
 $pdf->SetFont('times','B',11);
 // mencetak string 
-$pdf->Cell(190,5,'LEGGER IJAZAH SEKOLAH MENENGAH ATAS',0,1,'C');
+$pdf->Cell(190,10,'LEGGER IJAZAH SEKOLAH MENENGAH ATAS',0,1,'C');
 
 $pdf->Output();
 ?>
