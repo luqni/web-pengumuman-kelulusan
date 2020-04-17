@@ -8,8 +8,8 @@ $timestamp = strtotime($hsl['tgl_pengumuman']);
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -44,7 +44,7 @@ $timestamp = strtotime($hsl['tgl_pengumuman']);
     </nav>
     
     <div class="container">
-        <h2>Pengumuman Kelulusan <?=$hsl['tahun'] ?></h2>
+        <h2>Pengumuman Kelulusan Kelas XII <?=$hsl['tahun'] ?></h2>
 		<!-- countdown -->
 		
 		<div id="clock" class="lead"></div>
@@ -88,11 +88,11 @@ $timestamp = strtotime($hsl['tgl_pengumuman']);
 		} else {
 			//tampilkan form input nomor ujian
 		?>
-        <p>Masukkan nomor ujianmu pada form yang disediakan.</p>
+        <p>Masukkan nomor ujian anda pada form yang disediakan!.</p>
         
         <form method="post">
             <div class="input-group">
-                <input type="text" name="nomor" class="form-control" data-mask="23-101-999-9" placeholder="Nomor Ujian" required>
+                <input type="text" name="nomor" class="form-control" placeholder="Nomor Ujian" required>
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="submit" name="submit">Periksa!</button>
                 </span>
